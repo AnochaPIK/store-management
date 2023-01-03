@@ -41,13 +41,12 @@ const AddCustomerDialog = (props) => {
                   <Form.TextField
                     name="name"
                     label="ชื่อ"
-                    validate={required()}
+                    validate={required("โปรดระบุชื่อ")}
                   />
                 </DialogContent>
                 <DialogActions>
-                  {/* <Button onClick={handleClose}>ยกเลิก</Button>
-                  <Button onClick={handleClose}>เพิ่ม</Button> */}
-                  <Button type="submit">Submit</Button>
+                  <Button onClick={handleClose}>ยกเลิก</Button>
+                  <Button type="submit">เพิ่ม</Button>
                 </DialogActions>
               </div>
             );

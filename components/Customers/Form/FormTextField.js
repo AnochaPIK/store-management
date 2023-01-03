@@ -11,16 +11,16 @@ const Error = ({ name }) => (
 
 const TextFieldAdapter = (props) => {
   const { input, meta, ...rest } = props;
-  const { name } = input;
+  const { name, ...restInput } = input;
   const hasError = meta.touched && meta.error;
 
   return (
     <>
       <TextField
-        {...input}
         name={name}
         error={hasError}
         helperText={hasError && meta.error}
+        inputProps={restInput}
         {...rest}
       />
     </>
@@ -28,6 +28,5 @@ const TextFieldAdapter = (props) => {
 };
 
 export const FormTextField = (props) => {
-  const { ...rest } = props;
-  return <Field {...rest} component={TextFieldAdapter} />;
+  return <Field {...props} component={TextFieldAdapter} />;
 };
